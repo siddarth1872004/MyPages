@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Activity Diagram</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 30px;
+        background: #f5f5f5;
+        font-family: Arial, sans-serif;
+    }
+
+    .page {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    svg {
+        width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        background: white;
+    }
+
+    .activity {
+        fill: white;
+        stroke: #222;
+        stroke-width: 2;
+    }
+
+    .diamond {
+        fill: white;
+        stroke: #222;
+        stroke-width: 2;
+    }
+
+    .arrow {
+        stroke: #222;
+        stroke-width: 2;
+        fill: none;
+        marker-end: url(#arrow);
+    }
+
+    .text {
+        font-size: 16px;
+        text-anchor: middle;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<h1>Activity Diagram – Calorie Tracking System</h1>
+
+<svg viewBox="0 0 800 1100"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+        <marker id="arrow"
+                markerWidth="10"
+                markerHeight="10"
+                refX="9"
+                refY="3"
+                orient="auto">
+            <path d="M0,0 L10,3 L0,6 Z"
+                  fill="#222"/>
+        </marker>
+    </defs>
+
+
+    <!-- START -->
+
+    <circle cx="400" cy="45"
+            r="16"
+            fill="#222"/>
+
+
+    <!-- Create Profile -->
+
+    <rect class="activity"
+          x="280" y="100"
+          width="240" height="55"
+          rx="27"/>
+
+    <text class="text"
+          x="400" y="135">
+        Create Profile
+    </text>
+
+
+    <!-- Set Goals -->
+
+    <rect class="activity"
+          x="280" y="210"
+          width="240" height="55"
+          rx="27"/>
+
+    <text class="text"
+          x="400" y="245">
+        Set Fitness Goals
+    </text>
+
+
+    <!-- Record Meal -->
+
+    <rect class="activity"
+          x="280" y="320"
+          width="240" height="55"
+          rx="27"/>
+
+    <text class="text"
+          x="400" y="355">
+        Record Meal
+    </text>
+
+
+    <!-- Calculate -->
+
+    <rect class="activity"
+          x="250" y="430"
+          width="300" height="55"
+          rx="27"/>
+
+    <text class="text"
+          x="400" y="465">
+        Calculate Calories & Nutrition
+    </text>
+
+
+    <!-- Decision -->
+
+    <polygon class="diamond"
+             points="400,545 465,605 400,665 335,605"/>
+
+    <text class="text"
+          x="400" y="602">
+        Goal
+    </text>
+
+    <text class="text"
+          x="400" y="622">
+        Reached?
+    </text>
+
+
+    <!-- No -->
+
+    <rect class="activity"
+          x="70" y="700"
+          width="240" height="55"
+          rx="27"/>
+
+    <text class="text"
+          x="190" y="735">
+        Continue Tracking
+    </text>
+
+
+    <!-- Yes -->
+
+    <rect class="activity"
+          x="490" y="700"
+          width="240" height="55"
+          rx="27"/>
+
+    <text class="text"
+          x="610" y="735">
+        View Progress
+    </text>
+
+
+    <!-- Dashboard -->
+
+    <rect class="activity"
+          x="280" y="820"
+          width="240" height="55"
+          rx="27"/>
+
+    <text class="text"
+          x="400" y="855">
+        View Dashboard
+    </text>
+
+
+    <!-- END -->
+
+    <circle cx="400" cy="1000"
+            r="22"
+            fill="white"
+            stroke="#222"
+            stroke-width="4"/>
+
+    <circle cx="400" cy="1000"
+            r="12"
+            fill="#222"/>
+
+
+    <!-- ================= ARROWS ================= -->
+
+    <!-- Start -> Profile -->
+    <line class="arrow"
+          x1="400" y1="61"
+          x2="400" y2="100"/>
+
+
+    <!-- Profile -> Goals -->
+    <line class="arrow"
+          x1="400" y1="155"
+          x2="400" y2="210"/>
+
+
+    <!-- Goals -> Meal -->
+    <line class="arrow"
+          x1="400" y1="265"
+          x2="400" y2="320"/>
+
+
+    <!-- Meal -> Calculate -->
+    <line class="arrow"
+          x1="400" y1="375"
+          x2="400" y2="430"/>
+
+
+    <!-- Calculate -> Decision -->
+    <line class="arrow"
+          x1="400" y1="485"
+          x2="400" y2="545"/>
+
+
+    <!-- Decision -> No -->
+    <path class="arrow"
+          d="M335 605 L190 605 L190 700"/>
+
+    <text x="265" y="595"
+          font-size="14">
+        No
+    </text>
+
+
+    <!-- Decision -> Yes -->
+    <path class="arrow"
+          d="M465 605 L610 605 L610 700"/>
+
+    <text x="530" y="595"
+          font-size="14">
+        Yes
+    </text>
+
+
+    <!-- Continue -> Dashboard -->
+    <path class="arrow"
+          d="M190 755 L190 795 L400 795 L400 820"/>
+
+
+    <!-- Progress -> Dashboard -->
+    <path class="arrow"
+          d="M610 755 L610 795 L400 795"/>
+
+
+    <!-- Dashboard -> End -->
+    <line class="arrow"
+          x1="400" y1="875"
+          x2="400" y2="978"/>
+
+</svg>
+
+</div>
+
+</body>
+</html>

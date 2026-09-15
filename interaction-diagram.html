@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Interaction Diagram</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 30px;
+        background: #f5f5f5;
+        font-family: Arial, sans-serif;
+    }
+
+    .page {
+        max-width: 1200px;
+        margin: auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    svg {
+        width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        background: white;
+    }
+
+    .lifeline {
+        stroke: #333;
+        stroke-width: 2;
+        stroke-dasharray: 8 6;
+    }
+
+    .message {
+        stroke: #222;
+        stroke-width: 2;
+        fill: none;
+        marker-end: url(#arrow);
+    }
+
+    .box {
+        fill: white;
+        stroke: #222;
+        stroke-width: 2;
+    }
+
+    .label {
+        font-size: 15px;
+        text-anchor: middle;
+    }
+
+    .message-text {
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<h1>Interaction Diagram – Calorie Tracking System</h1>
+
+<svg viewBox="0 0 1200 800"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+        <marker id="arrow"
+                markerWidth="10"
+                markerHeight="10"
+                refX="9"
+                refY="3"
+                orient="auto">
+            <path d="M0,0 L10,3 L0,6 Z" fill="#222"/>
+        </marker>
+    </defs>
+
+
+    <!-- ================= ACTORS / OBJECTS ================= -->
+
+    <!-- User -->
+    <rect class="box"
+          x="70" y="40"
+          width="150" height="55"
+          rx="5"/>
+
+    <text class="label"
+          x="145" y="74">
+        User
+    </text>
+
+    <line class="lifeline"
+          x1="145" y1="95"
+          x2="145" y2="740"/>
+
+
+    <!-- System -->
+    <rect class="box"
+          x="400" y="40"
+          width="180" height="55"
+          rx="5"/>
+
+    <text class="label"
+          x="490" y="74">
+        Calorie System
+    </text>
+
+    <line class="lifeline"
+          x1="490" y1="95"
+          x2="490" y2="740"/>
+
+
+    <!-- Database -->
+    <rect class="box"
+          x="800" y="40"
+          width="160" height="55"
+          rx="5"/>
+
+    <text class="label"
+          x="880" y="74">
+        Database
+    </text>
+
+    <line class="lifeline"
+          x1="880" y1="95"
+          x2="880" y2="740"/>
+
+
+    <!-- ================= INTERACTIONS ================= -->
+
+    <!-- 1. Create Profile -->
+
+    <line class="message"
+          x1="145" y1="150"
+          x2="490" y2="150"/>
+
+    <text class="message-text"
+          x="250" y="140">
+        1. Create Profile
+    </text>
+
+
+    <!-- System saves profile -->
+
+    <line class="message"
+          x1="490" y1="200"
+          x2="880" y2="200"/>
+
+    <text class="message-text"
+          x="610" y="190">
+        2. Save User Details
+    </text>
+
+
+    <!-- Database response -->
+
+    <line class="message"
+          x1="880" y1="250"
+          x2="490" y2="250"/>
+
+    <text class="message-text"
+          x="620" y="240">
+        3. Profile Saved
+    </text>
+
+
+    <!-- 4. Record Meal -->
+
+    <line class="message"
+          x1="145" y1="320"
+          x2="490" y2="320"/>
+
+    <text class="message-text"
+          x="250" y="310">
+        4. Record Meal
+    </text>
+
+
+    <!-- 5. Food/Nutrition lookup -->
+
+    <line class="message"
+          x1="490" y1="370"
+          x2="880" y2="370"/>
+
+    <text class="message-text"
+          x="620" y="360">
+        5. Get Food & Nutrition Data
+    </text>
+
+
+    <!-- 6. Nutrition returned -->
+
+    <line class="message"
+          x1="880" y1="420"
+          x2="490" y2="420"/>
+
+    <text class="message-text"
+          x="620" y="410">
+        6. Return Nutrition Data
+    </text>
+
+
+    <!-- 7. Calculate -->
+
+    <line class="message"
+          x1="490" y1="470"
+          x2="490" y2="470"/>
+
+    <text class="message-text"
+          x="510" y="460">
+        7. Calculate Calories
+    </text>
+
+
+    <!-- 8. Dashboard -->
+
+    <line class="message"
+          x1="145" y1="540"
+          x2="490" y2="540"/>
+
+    <text class="message-text"
+          x="250" y="530">
+        8. View Dashboard
+    </text>
+
+
+    <!-- 9. Dashboard data -->
+
+    <line class="message"
+          x1="490" y1="590"
+          x2="880" y2="590"/>
+
+    <text class="message-text"
+          x="620" y="580">
+        9. Retrieve Progress Data
+    </text>
+
+
+    <!-- 10. Return -->
+
+    <line class="message"
+          x1="880" y1="640"
+          x2="490" y2="640"/>
+
+    <text class="message-text"
+          x="620" y="630">
+        10. Return Progress
+    </text>
+
+
+    <!-- 11. Track progress -->
+
+    <line class="message"
+          x1="145" y1="700"
+          x2="490" y2="700"/>
+
+    <text class="message-text"
+          x="250" y="690">
+        11. Track Progress
+    </text>
+
+</svg>
+
+</div>
+
+</body>
+</html>

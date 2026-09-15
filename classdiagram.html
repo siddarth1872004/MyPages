@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Class Diagram - Calorie Tracking System</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 30px;
+        background: #f5f5f5;
+        font-family: Arial, sans-serif;
+    }
+
+    .page {
+        max-width: 1200px;
+        margin: auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    svg {
+        width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        background: white;
+    }
+
+    .class-box {
+        fill: white;
+        stroke: #222;
+        stroke-width: 2;
+    }
+
+    .line {
+        stroke: #222;
+        stroke-width: 2;
+        fill: none;
+    }
+
+    .class-name {
+        font-size: 18px;
+        font-weight: bold;
+        text-anchor: middle;
+    }
+
+    .attribute {
+        font-size: 14px;
+    }
+
+    .relationship {
+        font-size: 13px;
+        font-weight: bold;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<h1>Class Diagram</h1>
+
+<svg viewBox="0 0 1200 750"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <!-- ================= USER ================= -->
+
+    <rect class="class-box"
+          x="60" y="270"
+          width="230" height="190"/>
+
+    <line class="line"
+          x1="60" y1="315"
+          x2="290" y2="315"/>
+
+    <line class="line"
+          x1="60" y1="405"
+          x2="290" y2="405"/>
+
+    <text class="class-name"
+          x="175" y="298">
+        User
+    </text>
+
+    <text class="attribute" x="75" y="340">
+        - userId
+    </text>
+
+    <text class="attribute" x="75" y="365">
+        - name
+    </text>
+
+    <text class="attribute" x="75" y="390">
+        - age
+    </text>
+
+    <text class="attribute" x="75" y="435">
+        + createProfile()
+    </text>
+
+    <text class="attribute" x="75" y="455">
+        + setGoal()
+    </text>
+
+
+    <!-- ================= FOOD ================= -->
+
+    <rect class="class-box"
+          x="470" y="60"
+          width="230" height="180"/>
+
+    <line class="line"
+          x1="470" y1="105"
+          x2="700" y2="105"/>
+
+    <line class="line"
+          x1="470" y1="185"
+          x2="700" y2="185"/>
+
+    <text class="class-name"
+          x="585" y="88">
+        Food
+    </text>
+
+    <text class="attribute" x="485" y="130">
+        - foodId
+    </text>
+
+    <text class="attribute" x="485" y="155">
+        - foodName
+    </text>
+
+    <text class="attribute" x="485" y="175">
+        - servingSize
+    </text>
+
+    <text class="attribute" x="485" y="210">
+        + getNutrition()
+    </text>
+
+    <text class="attribute" x="485" y="230">
+        + searchFood()
+    </text>
+
+
+    <!-- ================= MEAL ================= -->
+
+    <rect class="class-box"
+          x="470" y="300"
+          width="230" height="180"/>
+
+    <line class="line"
+          x1="470" y1="345"
+          x2="700" y2="345"/>
+
+    <line class="line"
+          x1="470" y1="425"
+          x2="700" y2="425"/>
+
+    <text class="class-name"
+          x="585" y="328">
+        Meal
+    </text>
+
+    <text class="attribute" x="485" y="370">
+        - mealId
+    </text>
+
+    <text class="attribute" x="485" y="395">
+        - mealType
+    </text>
+
+    <text class="attribute" x="485" y="415">
+        - quantity
+    </text>
+
+    <text class="attribute" x="485" y="450">
+        + recordMeal()
+    </text>
+
+    <text class="attribute" x="485" y="470">
+        + calculateCalories()
+    </text>
+
+
+    <!-- ================= NUTRITION ================= -->
+
+    <rect class="class-box"
+          x="850" y="60"
+          width="250" height="180"/>
+
+    <line class="line"
+          x1="850" y1="105"
+          x2="1100" y2="105"/>
+
+    <line class="line"
+          x1="850" y1="185"
+          x2="1100" y2="185"/>
+
+    <text class="class-name"
+          x="975" y="88">
+        Nutrition
+    </text>
+
+    <text class="attribute" x="865" y="130">
+        - calories
+    </text>
+
+    <text class="attribute" x="865" y="155">
+        - protein
+    </text>
+
+    <text class="attribute" x="865" y="175">
+        - carbohydrates
+    </text>
+
+    <text class="attribute" x="865" y="210">
+        + calculate()
+    </text>
+
+    <text class="attribute" x="865" y="230">
+        + display()
+    </text>
+
+
+    <!-- ================= GOAL ================= -->
+
+    <rect class="class-box"
+          x="850" y="300"
+          width="250" height="180"/>
+
+    <line class="line"
+          x1="850" y1="345"
+          x2="1100" y2="345"/>
+
+    <line class="line"
+          x1="850" y1="425"
+          x2="1100" y2="425"/>
+
+    <text class="class-name"
+          x="975" y="328">
+        Goal
+    </text>
+
+    <text class="attribute" x="865" y="370">
+        - goalId
+    </text>
+
+    <text class="attribute" x="865" y="395">
+        - goalType
+    </text>
+
+    <text class="attribute" x="865" y="415">
+        - targetCalories
+    </text>
+
+    <text class="attribute" x="865" y="450">
+        + setGoal()
+    </text>
+
+    <text class="attribute" x="865" y="470">
+        + trackGoal()
+    </text>
+
+
+    <!-- ================= PROGRESS ================= -->
+
+    <rect class="class-box"
+          x="470" y="560"
+          width="230" height="150"/>
+
+    <line class="line"
+          x1="470" y1="605"
+          x2="700" y2="605"/>
+
+    <line class="line"
+          x1="470" y1="665"
+          x2="700" y2="665"/>
+
+    <text class="class-name"
+          x="585" y="588">
+        Progress
+    </text>
+
+    <text class="attribute" x="485" y="630">
+        - date
+    </text>
+
+    <text class="attribute" x="485" y="650">
+        - caloriesConsumed
+    </text>
+
+    <text class="attribute" x="485" y="690">
+        + trackProgress()
+    </text>
+
+
+    <!-- ================= RELATIONSHIPS ================= -->
+
+    <!-- User -> Meal -->
+    <line class="line"
+          x1="290" y1="350"
+          x2="470" y2="390"/>
+
+    <text class="relationship"
+          x="350" y="350">
+        records
+    </text>
+
+
+    <!-- User -> Goal -->
+    <line class="line"
+          x1="290" y1="420"
+          x2="850" y2="390"/>
+
+    <text class="relationship"
+          x="570" y="375">
+        has
+    </text>
+
+
+    <!-- Meal -> Food -->
+    <line class="line"
+          x1="585" y1="300"
+          x2="585" y2="240"/>
+
+    <text class="relationship"
+          x="600" y="275">
+        contains
+    </text>
+
+
+    <!-- Food -> Nutrition -->
+    <line class="line"
+          x1="700" y1="150"
+          x2="850" y2="150"/>
+
+    <text class="relationship"
+          x="730" y="140">
+        has
+    </text>
+
+
+    <!-- Meal -> Nutrition -->
+    <line class="line"
+          x1="700" y1="390"
+          x2="850" y2="180"/>
+
+    <text class="relationship"
+          x="750" y="300">
+        calculates
+    </text>
+
+
+    <!-- User -> Progress -->
+    <line class="line"
+          x1="175" y1="460"
+          x2="500" y2="560"/>
+
+    <text class="relationship"
+          x="300" y="525">
+        tracks
+    </text>
+
+
+    <!-- Goal -> Progress -->
+    <line class="line"
+          x1="850" y1="450"
+          x2="700" y2="620"/>
+
+    <text class="relationship"
+          x="770" y="545">
+        monitors
+    </text>
+
+</svg>
+
+</div>
+
+</body>
+</html>
